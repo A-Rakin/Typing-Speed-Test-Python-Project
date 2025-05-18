@@ -50,26 +50,41 @@ if __name__ == '__main__':
     #Asks the user if they're ready to start.
     while True:
         check = input("Ready to begin: yes or no :")
+        print()
+        print()
+        if check == "yes":
+            #Some Random lines to Test
+            test=["The quick brown fox jumps over the lazy dog",
+                "She sells seashells by the seashore every sunny Saturday",
+                "The humming of the refrigerator blended with the ticking of the old wall clock",
+                "Practice typing every day to increase both speed and accuracy",
+                "In 2025, technology continues to reshape how we live and communicate",
+                "Success is not final, failure is not fatal"]
+            
+            test1=r.choice(test)  #Randomely Generate the test line from test
+            
+            print("   *****typing speed*****")
+            print()  #Space 2 lines for attractive look
+            print()
+            print(test1)
+            print()  #Space 2 lines for attractive look
+            print()
 
+            #Records the time before and after user input
 
-        #Some Random lines to Test
-        test=["The quick brown fox jumps over the lazy dog",
-              "She sells seashells by the seashore every sunny Saturday",
-              "The humming of the refrigerator blended with the ticking of the old wall clock",
-              "Practice typing every day to increase both speed and accuracy",
-              "In 2025, technology continues to reshape how we live and communicate",
-              "Success is not final, failure is not fatal"]
-        
-        test1=r.choice(test)  #Randomely Generate the test line from test
+            time_1 = time()
+            testinput = input("Enter : ")
+            time_2 = time()
 
-        #Records the time before and after user input
+            #Calculates Speed and Mistake
 
-        time_1 = time()
-        testinput = input("Enter : ")
-        time_2 = time()
+            print()
+            print('Speed : ',speed_time(time_1,time_2,testinput),"w/sec")
+            print('Error : ',mistake(test1,testinput))
 
-        #Calculates Speed and Mistake
-
-        
-
+        elif check == 'no' :
+            print("Thank you for using")
+            break
+        else:
+           print("Sorry!! Wrong input ")
 
