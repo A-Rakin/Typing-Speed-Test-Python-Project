@@ -1,7 +1,33 @@
 from time import*  #Used to track how long the user takes to type.
 import random as r #Used to randomly select a test sentence
 
-if __name__ == '__main__':  #Asks the user if they're ready to start.
+'''
+Defining a method called mistake() which literally
+
+Compares each character of the original sentence (par_test) with the user's input (user_test).
+
+If characters don't match, or an index error occurs (user typed fewer characters), it counts an error.
+
+Count will be incremented
+
+Returns the total number of errors.
+
+'''
+
+def mistake(par_test,user_test):
+    error=0
+    for i in range(len(par_test)):
+        try:
+            if par_test[i]!=user_test[i]:
+                error+=1
+        except:
+            error+=1
+    return error
+
+
+if __name__ == '__main__':  
+    
+    #Asks the user if they're ready to start.
     while True:
         check = input("Ready to begin: yes or no :")
 
@@ -19,5 +45,9 @@ if __name__ == '__main__':  #Asks the user if they're ready to start.
         time_1 = time()
         testinput = input("Enter : ")
         time_2 = time()
+
+        #Calculates Speed and Mistake
+
+        
 
 
